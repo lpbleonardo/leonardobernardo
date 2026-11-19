@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teixeira Lacerda Advogados</title>
+<meta name="description" content="Teixeira Lacerda Advogados, São Paulo. Advocacia empresarial e patrimonial desde 1998: societário, tributário, trabalhista, imobiliário, família e sucessões.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Identidade: verde-garrafa profundo, latão escovado e pedra clara. Selo com monograma, traço fino de arquitetura e livros como imagem. */
+  --green:#0f2a22;
+  --green2:#173a2f;
+  --brass:#b8955a;
+  --brass2:#d9bf8c;
+  --stone:#f4f1ea;
+  --ink:#1b211e;
+  --muted:#5f6a64;
+  --line:#ded8cb;
+  --display:"Bodoni Moda","Didot",Georgia,serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(2rem,4vw,2.9rem)}
+.kick{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+.kick::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:1px solid var(--brass);background:var(--brass);color:var(--green);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--brass2)}
+.btn.out{background:transparent;color:var(--brass2)}
+.btn.out:hover{background:var(--brass);color:var(--green)}
+.btn.dark{background:var(--green);border-color:var(--green);color:var(--stone)}
+.btn.dark:hover{background:transparent;color:var(--green)}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+
+/* barra e menu */
+.util{background:#0a1f19;color:#b7c2bc;font-size:.82rem}
+.util .wrap{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding:8px 0}
+.util a{text-decoration:none}
+.util a:hover{color:var(--brass2)}
+header.main{position:sticky;top:0;z-index:30;background:rgba(15,42,34,.97);border-bottom:1px solid rgba(184,149,90,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--stone)}
+.brand svg{width:52px;height:52px}
+.brand b{display:block;font-family:var(--display);font-weight:500;font-size:1.35rem;letter-spacing:.04em;line-height:1}
+.brand small{font-size:.66rem;letter-spacing:.38em;text-transform:uppercase;color:var(--brass2)}
+.nav ul{list-style:none;display:flex;gap:28px;font-size:.92rem}
+.nav ul a{text-decoration:none;color:#d3dad6}
+.nav ul a:hover{color:var(--brass2)}
+.nav .btn{padding:11px 18px;font-size:.8rem}
+@media (max-width:980px){.nav ul{display:none}}
+@media (max-width:520px){.nav .btn{display:none}}
+
+/* hero */
+.hero{background:var(--green);color:var(--stone);position:relative;overflow:hidden;padding:96px 0 150px}
+.hero .facade{position:absolute;right:-40px;bottom:0;width:720px;opacity:.22;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 20%,rgba(184,149,90,.14),transparent 55%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.3rem);margin-bottom:24px}
+.hero h1 em{color:var(--brass2)}
+.hero p{color:#c9d2cd;font-size:1.1rem;max-width:52ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.help{border:1px solid rgba(184,149,90,.4);padding:28px 30px;background:rgba(10,31,25,.55);backdrop-filter:blur(2px)}
+.help h2{font-size:1.4rem;margin-bottom:14px;color:var(--brass2)}
+.help ul{list-style:none}
+.help li a{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(244,241,234,.1);text-decoration:none;color:#e4e9e6;font-size:.98rem}
+.help li a::after{content:"→";color:var(--brass)}
+.help li a:hover{color:var(--brass2)}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}.hero .facade{width:520px;opacity:.14}}
+
+/* diferenciais */
+.diffs{margin-top:-80px;position:relative;z-index:2}
+.diffs .wrap{background:#fff;border-top:3px solid var(--brass);box-shadow:0 30px 50px -30px rgba(15,42,34,.45);display:grid;grid-template-columns:repeat(5,1fr)}
+.diffs div{padding:30px 22px;text-align:center;border-right:1px solid var(--line)}
+.diffs div:last-child{border-right:none}
+.diffs svg{width:40px;height:40px;margin:0 auto 12px;color:var(--brass)}
+.diffs h3{font-family:var(--body);font-weight:600;font-size:.95rem;line-height:1.3}
+.diffs p{font-size:.85rem;color:var(--muted);margin-top:4px}
+@media (max-width:980px){.diffs .wrap{grid-template-columns:repeat(2,1fr)}.diffs div{border-bottom:1px solid var(--line)}.diffs div:nth-child(2n){border-right:none}.diffs div:last-child{grid-column:1/-1}}
+
+section.block{padding:110px 0}
+
+/* sobre */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about p{color:#3d4642}
+.about p+p{margin-top:14px}
+.art{position:relative;background:var(--green);padding:36px;border:1px solid var(--brass)}
+.art::before{content:"";position:absolute;inset:14px;border:1px solid rgba(184,149,90,.35);pointer-events:none}
+.art .since{position:absolute;left:-26px;bottom:34px;background:var(--brass);color:var(--green);padding:16px 22px;font-family:var(--display);line-height:1.1}
+.art .since b{display:block;font-size:2.2rem;font-weight:500}
+.art .since span{font-family:var(--body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.tabs{margin-top:30px}
+.tabs [role=tablist]{display:flex;gap:4px;border-bottom:1px solid var(--line)}
+.tabs button{font:inherit;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:none;padding:10px 16px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected=true]{color:var(--green);border-bottom-color:var(--brass)}
+.tabs [role=tabpanel]{padding-top:16px;color:#3d4642}
+@media (max-width:920px){.about .wrap{grid-template-columns:1fr;gap:48px}.art .since{left:12px}}
+
+/* áreas */
+.areas{background:var(--green);color:var(--stone)}
+.areas .head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:52px}
+.areas .head p{max-width:46ch;color:#b9c4be}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,149,90,.3);border:1px solid rgba(184,149,90,.3)}
+.card{background:var(--green);padding:38px 32px 30px;display:flex;flex-direction:column;gap:12px;transition:background .25s}
+.card:hover{background:var(--green2)}
+.card svg{width:46px;height:46px;color:var(--brass)}
+.card h3{font-size:1.5rem}
+.card p{color:#b9c4be;font-size:.96rem}
+.card details{margin-top:auto;border-top:1px solid rgba(244,241,234,.1);padding-top:12px}
+.card summary{cursor:pointer;list-style:none;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2)}
+.card summary::-webkit-details-marker{display:none}
+.card summary::after{content:" +"}
+.card details[open] summary::after{content:" –"}
+.card details ul{margin-top:10px;padding-left:18px;color:#d3dad6;font-size:.92rem;display:grid;gap:3px}
+@media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+
+/* situações */
+.cases .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.cases ul{list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.cases li{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.cases li svg{width:22px;height:22px;color:var(--brass);margin-top:3px}
+.cases li b{display:block;font-weight:600}
+.cases li span{color:var(--muted);font-size:.95rem}
+@media (max-width:920px){.cases .wrap{grid-template-columns:1fr;gap:28px}}
+
+.band{background:linear-gradient(90deg,var(--brass),#a8834a);color:var(--green)}
+.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:46px 0}
+.band h2{font-size:clamp(1.6rem,3vw,2.2rem);max-width:28ch}
+
+/* sócios */
+.team .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px}
+.person .pic{aspect-ratio:4/5;background:var(--green);position:relative;display:grid;place-items:center;overflow:hidden}
+.person .pic::before{content:"";position:absolute;inset:12px;border:1px solid rgba(184,149,90,.5)}
+.person .pic span{font-family:var(--display);font-style:italic;font-size:4.2rem;color:var(--brass2)}
+.person .pic svg{position:absolute;bottom:0;left:0;width:100%;opacity:.18}
+.person h3{font-size:1.35rem;margin-top:18px}
+.person .role{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.person p{font-size:.93rem;color:var(--muted);margin-top:6px}
+.person .oab{font-size:.8rem;margin-top:8px;color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:980px){.team .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.team .grid{grid-template-columns:1fr}}
+
+/* conteúdos */
+.posts{background:#ebe6db}
+.posts .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.post{background:#fff;border-bottom:3px solid var(--brass);display:flex;flex-direction:column}
+.post .top{background:var(--green);height:150px;position:relative;overflow:hidden}
+.post .top svg{position:absolute;inset:0;width:100%;height:100%;color:var(--brass);opacity:.55}
+.post .body{padding:24px}
+.post .meta{font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.post h3{font-size:1.3rem;margin:8px 0}
+.post p{font-size:.93rem;color:var(--muted)}
+@media (max-width:920px){.posts .grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:64px}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font-family:var(--display);font-size:1.2rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brass);font-family:var(--body)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:#3d4642;max-width:62ch}
+@media (max-width:920px){.faq .wrap{grid-template-columns:1fr;gap:20px}}
+
+/* contato */
+.contact{background:var(--green);color:var(--stone)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px}
+.contact dl{margin-top:28px;display:grid;gap:18px}
+.contact dt{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brass2)}
+.contact dd{color:#dfe5e2}
+.contact dd a{text-decoration:none}
+.map{margin-top:28px;border:1px solid rgba(184,149,90,.4);display:block;text-decoration:none;position:relative}
+.map svg{width:100%;height:auto}
+.map span{position:absolute;right:12px;bottom:10px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2)}
+form{background:var(--stone);color:var(--ink);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:3px solid var(--brass)}
+form h3{grid-column:1/-1;font-size:1.6rem}
+.f{display:grid;gap:4px}
+.full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
+input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);padding:12px 14px;width:100%;border-radius:0}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass)}
+.ok{display:flex;gap:10px;font-size:.84rem;color:var(--muted);align-items:flex-start;font-weight:400;letter-spacing:0}
+.ok input{width:auto;margin-top:5px}
+.err{display:none;color:#8f2b2b;font-size:.86rem}
+.err.on{display:block}
+.done{display:none;background:#fff;border-left:3px solid var(--brass);padding:14px 16px;font-size:.95rem}
+.done.on{display:block}
+@media (max-width:920px){.contact .wrap{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:26px}}
+
+footer{background:#0a1f19;color:#93a29a;font-size:.84rem;padding:44px 0 50px}
+footer .top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid rgba(184,149,90,.2)}
+footer .top a{text-decoration:none}
+footer .top a:hover{color:var(--brass2)}
+footer p.legal{margin-top:18px;max-width:100ch;line-height:1.6}
+
+.float{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--brass);color:var(--green);display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.5);text-decoration:none}
+.float svg{width:28px;height:28px}
+.float:hover{background:var(--brass2)}
+</style>
+</head>
+<body>
+
+<div class="util"><div class="wrap">
+  <span>Rua Joaquim Floriano, 466, 12º andar · Itaim Bibi · São Paulo/SP</span>
+  <span><a href="tel:+551130000000">(11) 3000-0000</a> · <a href="https://wa.me/5511999990000" target="_blank" rel="noopener">WhatsApp (11) 99999-0000</a></span>
+</div></div>
+
+<header class="main">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Teixeira Lacerda Advogados, início">
+      <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <circle cx="26" cy="26" r="25" stroke="#b8955a"/>
+        <circle cx="26" cy="26" r="21" stroke="#b8955a" stroke-width=".6" stroke-dasharray="1 2.2"/>
+        <text x="26" y="32.5" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-size="17" fill="#d9bf8c" letter-spacing="1">TL</text>
+      </svg>
+      <span><b>Teixeira Lacerda</b><small>Advogados · 1998</small></span>
+    </a>
+    <ul>
+      <li><a href="#escritorio">O escritório</a></li>
+      <li><a href="#atuacao">Atuação</a></li>
+      <li><a href="#socios">Sócios</a></li>
+      <li><a href="#conteudos">Conteúdos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn" href="#contato">Agendar consulta</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <svg class="facade" viewBox="0 0 720 520" fill="none" stroke="#d9bf8c" stroke-width="1.2" aria-hidden="true">
+      <path d="M40 150 360 30 680 150Z"/><path d="M80 150 360 52 640 150"/>
+      <circle cx="360" cy="110" r="22"/><path d="M360 92v36M345 110h30"/>
+      <rect x="40" y="150" width="640" height="22"/><rect x="40" y="172" width="640" height="10"/>
+      <g id="col"><rect x="78" y="182" width="44" height="12"/><rect x="84" y="194" width="32" height="270"/><path d="M92 194v270M100 194v270M108 194v270"/><rect x="74" y="464" width="52" height="14"/></g>
+      <use href="#col" x="104"/><use href="#col" x="208"/><use href="#col" x="312"/><use href="#col" x="416"/><use href="#col" x="520"/>
+      <rect x="20" y="478" width="680" height="16"/><rect x="0" y="494" width="720" height="26"/>
+    </svg>
+    <div class="wrap">
+      <div>
+        <p class="kick">Advocacia empresarial e patrimonial · São Paulo</p>
+        <h1>Proteção jurídica para a sua empresa, o seu patrimônio e a sua <em>família.</em></h1>
+        <p>Desde 1998 assessoramos empresas, sócios e famílias em questões societárias, tributárias, trabalhistas, imobiliárias e sucessórias. Cada caso é conduzido pessoalmente por um dos sócios.</p>
+        <div class="ctas">
+          <a class="btn" href="https://wa.me/5511999990000?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          <a class="btn out" href="#atuacao">Áreas de atuação</a>
+        </div>
+      </div>
+      <nav class="help" aria-label="Atalhos por assunto">
+        <h2>Como podemos ajudar?</h2>
+        <ul>
+          <li><a href="#atuacao">Entrada ou saída de sócio</a></li>
+          <li><a href="#atuacao">Auto de infração da Receita</a></li>
+          <li><a href="#atuacao">Reclamação trabalhista contra a empresa</a></li>
+          <li><a href="#atuacao">Compra ou locação de imóvel comercial</a></li>
+          <li><a href="#atuacao">Inventário e planejamento sucessório</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div class="diffs">
+    <div class="wrap">
+      <div><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="20" cy="14" r="6"/><path d="M8 34c1.5-7 6-10 12-10s10.5 3 12 10"/></svg><h3>Sócio responsável</h3><p>do início ao fim</p></div>
+      <div><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 6v28M10 12h20M6 24l4-12 4 12a4 4 0 0 1-8 0ZM26 24l4-12 4 12a4 4 0 0 1-8 0ZM14 34h12"/></svg><h3>28 anos de prática</h3><p>em São Paulo</p></div>
+      <div><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="6" width="24" height="28"/><path d="M13 13h14M13 19h14M13 25h8"/></svg><h3>Honorários por escrito</h3><p>antes de começar</p></div>
+      <div><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="9" width="28" height="19"/><path d="M14 33h12M20 28v5"/></svg><h3>Presencial ou online</h3><p>reuniões por vídeo</p></div>
+      <div><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="10" y="17" width="20" height="15"/><path d="M14 17v-5a6 6 0 0 1 12 0v5M20 23v4"/></svg><h3>Sigilo e LGPD</h3><p>em todo o atendimento</p></div>
+    </div>
+  </div>
+
+  <section class="block about" id="escritorio">
+    <div class="wrap">
+      <div>
+        <p class="kick">O escritório</p>
+        <h2>Uma casa de advocacia com nome e sobrenome</h2>
+        <p style="margin-top:20px">Helena Teixeira e Ricardo Lacerda fundaram o escritório em 1998, com a ideia de que o cliente deve sempre falar com quem decide. Ela vinha da área societária; ele, de família e sucessões. Daí o perfil da casa: empresas familiares e patrimônios que misturam sociedade, bens e herança.</p>
+        <p>Hoje somos 22 profissionais no Itaim Bibi, com atuação em São Paulo e, por meio de correspondentes, em todo o país.</p>
+        <div class="tabs">
+          <div role="tablist" aria-label="Princípios do escritório">
+            <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Missão</button>
+            <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Visão</button>
+            <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Valores</button>
+          </div>
+          <div role="tabpanel" id="p1" aria-labelledby="t1"><p>Dar segurança jurídica a empresas e famílias, com orientação clara para que cada decisão seja tomada sabendo dos riscos.</p></div>
+          <div role="tabpanel" id="p2" aria-labelledby="t2" hidden><p>Ser o escritório que as famílias empresárias de São Paulo chamam primeiro, e por mais de uma geração.</p></div>
+          <div role="tabpanel" id="p3" aria-labelledby="t3" hidden><p>Ética, sigilo, linguagem simples, prazo cumprido e honorários combinados antes.</p></div>
+        </div>
+      </div>
+      <div class="art">
+        <svg viewBox="0 0 440 400" fill="none" stroke="#d9bf8c" stroke-width="1.2" aria-label="Ilustração de estante com livros de direito e balança">
+          <path d="M20 140h400M20 270h400M20 380h400"/>
+          <g>
+            <rect x="40" y="60" width="26" height="80"/><rect x="66" y="50" width="22" height="90"/><rect x="88" y="66" width="30" height="74"/><rect x="118" y="56" width="20" height="84"/><rect x="138" y="70" width="28" height="70"/>
+            <path d="M44 80h18M44 86h18M70 72h14M92 86h22M122 76h12M142 90h20"/>
+            <rect x="180" y="40" width="34" height="100"/><path d="M186 60h22M186 66h22M186 120h22"/>
+            <path d="M228 140l20-86 22 5-20 86"/>
+          </g>
+          <g>
+            <rect x="40" y="190" width="30" height="80"/><rect x="70" y="182" width="24" height="88"/><rect x="94" y="196" width="26" height="74"/>
+            <path d="M46 210h18M74 204h16M98 214h18"/>
+          </g>
+          <g transform="translate(280 160)">
+            <path d="M60 0v100M20 100h80M30 20h60"/>
+            <path d="M30 20 14 60h32Z"/><path d="M90 20 74 60h32Z"/>
+            <path d="M14 60a16 6 0 0 0 32 0M74 60a16 6 0 0 0 32 0"/>
+            <circle cx="60" cy="16" r="5"/>
+          </g>
+          <g>
+            <rect x="150" y="300" width="120" height="16"/><rect x="160" y="316" width="110" height="16"/><rect x="146" y="332" width="128" height="18"/><rect x="156" y="350" width="112" height="30"/>
+            <path d="M330 380c0-30 10-42 22-42s22 12 22 42"/><path d="M352 338v-28M340 316c6-10 18-10 24 0"/>
+          </g>
+        </svg>
+        <div class="since"><b>1998</b><span>desde</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block areas" id="atuacao">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="kick">Áreas de atuação</p><h2>Seis frentes, uma orientação só</h2></div>
+        <p>Quando um assunto envolve mais de uma área, as equipes trabalham juntas e você recebe uma única recomendação.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="6" y="14" width="34" height="24"/><path d="M17 14V8h12v6M6 24h34M21 24v4h4v-4"/></svg>
+          <h3>Societário e contratos</h3><p>Sociedades, acordos de sócios, compra e venda de participações e contratos comerciais.</p>
+          <details><summary>Ver serviços</summary><ul><li>Abertura e reorganização de sociedades</li><li>Acordo de sócios e de quotistas</li><li>Entrada e saída de sócios</li><li>Contratos de distribuição e serviços</li></ul></details>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M10 6h20l6 6v28H10Z"/><path d="M30 6v6h6M16 20h14M16 26h14M16 32h8"/><circle cx="34" cy="34" r="7"/><path d="M31 34h6M34 31v6"/></svg>
+          <h3>Tributário</h3><p>Planejamento, defesas em autos de infração e transição da Reforma Tributária sobre o consumo.</p>
+          <details><summary>Ver serviços</summary><ul><li>Planejamento tributário</li><li>Defesas no CARF e no TIT</li><li>Recuperação de créditos</li><li>CBS e IBS: adequação de contratos</li></ul></details>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="16" cy="14" r="5"/><circle cx="31" cy="14" r="5"/><path d="M6 36c1-7 5-11 10-11s9 4 10 11M21 36c1-7 5-11 10-11s9 4 10 11"/></svg>
+          <h3>Trabalhista empresarial</h3><p>Defesa de empresas, consultoria preventiva e negociação com sindicatos.</p>
+          <details><summary>Ver serviços</summary><ul><li>Defesa em reclamações trabalhistas</li><li>Revisão de contratos e políticas</li><li>Regime híbrido e teletrabalho</li><li>Negociação coletiva</li></ul></details>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 40V20L23 8l17 12v20Z"/><path d="M18 40V28h10v12M14 22h4M28 22h4"/></svg>
+          <h3>Imobiliário</h3><p>Auditoria de imóveis, compra e venda, locação comercial e incorporação.</p>
+          <details><summary>Ver serviços</summary><ul><li>Due diligence de imóveis</li><li>Locação comercial e built to suit</li><li>Incorporação imobiliária</li><li>Regularização de imóveis</li></ul></details>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M23 40s-15-8-15-20a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 12-15 20-15 20Z"/></svg>
+          <h3>Família e sucessões</h3><p>Planejamento sucessório, inventários, testamentos e pactos antenupciais.</p>
+          <details><summary>Ver serviços</summary><ul><li>Inventário judicial e em cartório</li><li>Holding familiar</li><li>Testamentos e doações</li><li>Divórcio e partilha de bens</li></ul></details>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M23 6l14 6v10c0 9-6 15-14 18-8-3-14-9-14-18V12Z"/><path d="M17 23l4 4 8-8"/></svg>
+          <h3>Proteção de dados</h3><p>Adequação à LGPD, políticas de privacidade e contratos com fornecedores.</p>
+          <details><summary>Ver serviços</summary><ul><li>Diagnóstico de LGPD</li><li>Políticas e termos de uso</li><li>Contratos de tratamento de dados</li><li>Resposta a incidentes</li></ul></details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block cases">
+    <div class="wrap">
+      <div><p class="kick">Situações comuns</p><h2>Quando vale a pena falar com um advogado</h2><p style="margin-top:18px;color:var(--muted)">Muitas questões ficam mais simples e mais baratas quando tratadas antes de virar processo.</p></div>
+      <ul>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-6"/></svg><div><b>Um sócio quer sair da empresa</b><span>Como calcular a parte dele sem paralisar o negócio.</span></div></li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-6"/></svg><div><b>Chegou uma notificação da Receita</b><span>Prazos curtos para defesa administrativa.</span></div></li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-6"/></svg><div><b>Vai assinar um contrato de valor alto</b><span>Revisão antes da assinatura evita discussões depois.</span></div></li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-6"/></svg><div><b>A família quer organizar a herança</b><span>Planejamento em vida reduz custos e conflitos.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="band"><div class="wrap"><h2>Prefere conversar antes? Agende uma reunião com o sócio da área.</h2><a class="btn dark" href="#contato">Agendar consulta</a></div></div>
+
+  <section class="block team" id="socios">
+    <div class="wrap">
+      <p class="kick">Sócios</p><h2>Quem conduz o seu caso</h2>
+      <div class="grid">
+        <article class="person"><div class="pic" aria-hidden="true"><span>HT</span></div><p class="role" style="margin-top:18px">Sócia fundadora</p><h3 style="margin-top:4px">Helena Teixeira</h3><p>Societário e imobiliário. Mestre em Direito Comercial pela USP.</p><p class="oab">OAB/SP 000.001</p></article>
+        <article class="person"><div class="pic" aria-hidden="true"><span>RL</span></div><p class="role" style="margin-top:18px">Sócio fundador</p><h3 style="margin-top:4px">Ricardo Lacerda</h3><p>Família e sucessões. Especialista pela PUC-SP.</p><p class="oab">OAB/SP 000.002</p></article>
+        <article class="person"><div class="pic" aria-hidden="true"><span>MA</span></div><p class="role" style="margin-top:18px">Sócia</p><h3 style="margin-top:4px">Marina Azevedo</h3><p>Tributário. Especialista pelo IBET.</p><p class="oab">OAB/SP 000.003</p></article>
+        <article class="person"><div class="pic" aria-hidden="true"><span>FN</span></div><p class="role" style="margin-top:18px">Sócio</p><h3 style="margin-top:4px">Felipe Nogueira</h3><p>Trabalhista empresarial. Mestre pela USP.</p><p class="oab">OAB/SP 000.004</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block posts" id="conteudos">
+    <div class="wrap">
+      <p class="kick">Conteúdos</p><h2>Artigos da equipe</h2>
+      <div class="grid">
+        <article class="post"><div class="top" aria-hidden="true"><svg viewBox="0 0 300 150" fill="none" stroke="currentColor"><path d="M0 120h300M30 120V60l40-20 40 20v60M160 120V40h60v80M240 120V80h40v40"/></svg></div><div class="body"><p class="meta">Tributário · Out 2026</p><h3>Reforma Tributária e prestadores de serviço em 2027</h3><p>O calendário da CBS e o que revisar nos contratos longos.</p></div></article>
+        <article class="post"><div class="top" aria-hidden="true"><svg viewBox="0 0 300 150" fill="none" stroke="currentColor"><circle cx="150" cy="75" r="40"/><circle cx="150" cy="75" r="60"/><path d="M90 75h120M150 15v120"/></svg></div><div class="body"><p class="meta">Sucessões · Set 2026</p><h3>Holding familiar: quando faz sentido</h3><p>Custos, vantagens e cuidados com o ITCMD.</p></div></article>
+        <article class="post"><div class="top" aria-hidden="true"><svg viewBox="0 0 300 150" fill="none" stroke="currentColor"><rect x="90" y="25" width="120" height="110"/><path d="M110 50h80M110 70h80M110 90h50M180 115l10 10 20-24"/></svg></div><div class="body"><p class="meta">Contratos · Ago 2026</p><h3>Não concorrência entre empresas</h3><p>Prazo, território e objeto que os tribunais aceitam.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq" id="duvidas">
+    <div class="wrap">
+      <div><p class="kick">Dúvidas frequentes</p><h2>Antes da primeira reunião</h2></div>
+      <div>
+        <details><summary>A primeira conversa é cobrada?</summary><p>A conversa inicial, de até 30 minutos, serve para entender o caso e não é cobrada. A partir dela enviamos uma proposta de honorários por escrito.</p></details>
+        <details><summary>Vocês atendem fora de São Paulo?</summary><p>Sim. Reuniões podem ser por vídeo e, para processos em outros estados, trabalhamos com escritórios correspondentes.</p></details>
+        <details><summary>Que documentos devo levar?</summary><p>Contrato social, contratos e notificações relacionadas ao assunto. Se não tiver tudo, comece pelo que tiver: ajudamos a identificar o que falta.</p></details>
+        <details><summary>Como são calculados os honorários?</summary><p>Usamos a Tabela de Honorários da OAB/SP como referência e combinamos o valor por escrito, por etapa ou por mês, conforme o tipo de trabalho.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contato">
+    <div class="wrap">
+      <div>
+        <p class="kick">Contato</p><h2>Agende uma conversa</h2>
+        <dl>
+          <div><dt>Endereço</dt><dd>Rua Joaquim Floriano, 466, 12º andar<br>Itaim Bibi · São Paulo/SP · 04534-002</dd></div>
+          <div><dt>Telefone</dt><dd><a href="tel:+551130000000">(11) 3000-0000</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5511999990000" target="_blank" rel="noopener">(11) 99999-0000</a></dd></div>
+          <div><dt>E-mail</dt><dd>contato@teixeiralacerda.adv.br</dd></div>
+          <div><dt>Horário</dt><dd>Segunda a sexta, das 9h às 18h</dd></div>
+        </dl>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Joaquim+Floriano+466+São+Paulo" target="_blank" rel="noopener" aria-label="Abrir o endereço no Google Maps">
+          <svg viewBox="0 0 520 200" fill="none" aria-hidden="true">
+            <rect width="520" height="200" fill="#173a2f"/>
+            <g stroke="#2c5446" stroke-width="10"><path d="M0 60h520M0 150h520M120 0v200M300 0v200M430 0v200"/></g>
+            <g stroke="#b8955a" stroke-width="3"><path d="M-10 190 530 20"/></g>
+            <g stroke="#234a3d" stroke-width="4"><path d="M0 105h520M210 0v200M60 0v200"/></g>
+            <path d="M300 64c-12 0-20 9-20 20 0 15 20 34 20 34s20-19 20-34c0-11-8-20-20-20Z" fill="#d9bf8c"/><circle cx="300" cy="84" r="7" fill="#0f2a22"/>
+          </svg>
+          <span>Ver no mapa →</span>
+        </a>
+      </div>
+      <form id="cform" novalidate>
+        <h3>Envie sua mensagem</h3>
+        <div class="f"><label for="c-nome">Nome</label><input id="c-nome" name="nome" autocomplete="name"></div>
+        <div class="f"><label for="c-tel">Telefone</label><input id="c-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="f full"><label for="c-email">E-mail</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
+        <div class="f full"><label for="c-area">Assunto</label><select id="c-area" name="area"><option>Societário e contratos</option><option>Tributário</option><option>Trabalhista empresarial</option><option>Imobiliário</option><option>Família e sucessões</option><option>Proteção de dados</option><option>Outro</option></select></div>
+        <div class="f full"><label for="c-msg">Mensagem</label><textarea id="c-msg" name="msg" placeholder="Descreva brevemente. Evite enviar documentos neste primeiro contato."></textarea></div>
+        <label class="ok full" for="c-ok"><input id="c-ok" type="checkbox" name="ok"> Autorizo o uso destes dados apenas para responder a este contato, conforme a LGPD.</label>
+        <p class="err full" id="c-err" role="alert">Preencha nome, um e-mail válido e marque a autorização.</p>
+        <div class="full"><button class="btn dark" type="submit">Preparar e-mail</button></div>
+        <p class="done full" id="c-done" role="status">Mensagem pronta. <a id="c-link" href="#">Abrir no seu e-mail</a> para enviar.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <span><b style="font-family:var(--display);font-weight:500;font-size:1.2rem;color:#e4e9e6">Teixeira Lacerda Advogados</b><br>Sociedade de Advogados · OAB/SP nº 00.000 · CNPJ 00.000.000/0001-00</span>
+      <span><a href="#escritorio">O escritório</a> · <a href="#atuacao">Atuação</a> · <a href="#socios">Sócios</a> · <a href="#contato">Contato</a></span>
+    </div>
+    <p class="legal">Conteúdo de caráter informativo, em conformidade com o Código de Ética e Disciplina da OAB e com o Provimento nº 205/2021 do Conselho Federal. Nenhuma informação deste site constitui consulta jurídica ou promessa de resultado. © <span id="year">2026</span> Teixeira Lacerda Advogados.</p>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/5511999990000?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 23l1.6-4.6A9.5 9.5 0 1 1 10 22Z"/><path d="M10.5 10.5c.5 3 2.5 5.5 6 7l1.5-1.6-2.2-1.2-1 .9c-1.4-.7-2.4-1.7-3.1-3.1l.9-1-1.2-2.2Z" fill="currentColor" stroke="none"/></svg>
+</a>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// abas Missão / Visão / Valores
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function pick(t){
+  tabs.forEach(x => {
+    const on = x === t;
+    x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+  });
+}
+tabs.forEach((t, i) => {
+  t.addEventListener("click", () => pick(t));
+  t.addEventListener("keydown", e => {
+    const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+    if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); }
+  });
+});
+
+// formulário
+const EMAIL = "contato@teixeiralacerda.adv.br";
+document.getElementById("cform").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target;
+  const ok = f.nome.value.trim() && /\S+@\S+\.\S+/.test(f.email.value) && f.ok.checked;
+  document.getElementById("c-err").classList.toggle("on", !ok);
+  if (!ok) return;
+  const body = "Nome: " + f.nome.value.trim() + "\nE-mail: " + f.email.value.trim() +
+    (f.tel.value.trim() ? "\nTelefone: " + f.tel.value.trim() : "") + "\n\n" + f.msg.value.trim();
+  document.getElementById("c-link").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Contato pelo site: " + f.area.value) + "&body=" + encodeURIComponent(body);
+  document.getElementById("c-done").classList.add("on");
+});
+</script>
+<a href="../index.html#projetos" style="position:fixed;left:12px;bottom:12px;z-index:99;font:500 13px/1 system-ui,sans-serif;background:#111;color:#fff;padding:8px 12px;border-radius:20px;text-decoration:none;opacity:.85">← portfólio</a>
+</body>
+</html>
